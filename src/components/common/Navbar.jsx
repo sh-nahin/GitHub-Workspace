@@ -24,13 +24,13 @@ export function Navbar() {
           Notifications{unreadCount > 0 ? ` (${unreadCount})` : ''}
         </Link>
         {isAuthenticated ? (
-          <>
-            <span className="muted">{currentUser.name}</span>{' '}
-            <button className="btn btn-secondary" onClick={handleLogout}>
-              Log out
-            </button>
-          </>
-        ) : (
+  <>
+    <span className="navbar-username">{currentUser.name}</span>{' '}
+    <button className="btn-logout" onClick={handleLogout}>
+      Log out
+    </button>
+  </>
+) : (
           <Link to="/login">Log in</Link>
         )}
       </div>
