@@ -1,27 +1,8 @@
-# GitHub Workspace
+A mini GitHub client built with React, React Router, and the Context API. Search developers and repositories, view profiles, build repository collections, favorite items, and track recent activity — all powered by the live GitHub REST API.
 
-A mini GitHub client built with React, React Router, and the Context API.
-Search developers and repositories, explore profiles, build repository
-collections, favorite users/repos, and track your recent activity — all
-backed by the real GitHub REST API.
+Tech Stack
 
-## Tech Stack
-- React 18 (functional components + hooks)
-- React Router v6 (routing, protected routes, dynamic routes, query params)
-- Context API + `useReducer` (state management — no Redux)
-- Vite (build tool / dev server)
-- GitHub REST API (no auth required for read access)
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-Then open the local URL Vite prints (usually http://localhost:5173).
-
-Optional: copy `.env.example` to `.env` and add a GitHub personal access
-token to raise the API rate limit from 60/hr to 5000/hr.
+React 18 · React Router v6 · Context API + useReducer (no Redux) · Vite · GitHub REST API
 
 ## Project Structure
 
@@ -42,11 +23,20 @@ src/
 └── utils/            # formatDate, storageKeys
 ```
 
-## Notes / Assumptions
-- Authentication is a **fake** local system (GitHub's API doesn't need
-  login for public reads) — it exists purely to demonstrate forms,
-  validation, Context, protected routes, and localStorage.
-- All user data (auth, favorites, collections, notifications, settings,
-  activity) is stored in the browser's `localStorage` — nothing is sent
-  to a server.
-- Built and tested on macOS with Node 20 LTS.
+
+Getting Started
+
+bashnpm install
+npm run dev
+
+Open the local URL Vite prints (usually http://localhost:5173).
+
+Features
+
+Auth (local/simulated) · Developer search · User profiles · Repository explorer with tabs · Collections · Favorites · Advanced search with filters · Activity feed · Notifications · Settings (theme, pagination, defaults)
+
+Notes
+
+
+Auth is a simulated local system (GitHub's API needs no login for public reads) — built to demonstrate forms, Context, and protected routes.
+All data persists in localStorage; nothing is sent to a server.
